@@ -742,10 +742,11 @@ const MONTH_PICK = {book:"Meridianbet", month:"Oktoba 2026",
   reasons:["Masoko mengi ya mpira na live betting","Booking code zetu za kila siku zinapatikana hapa","Deposit na withdraw za haraka kwa simu"],
   popupDelay:2500 // milisekunde kabla pop-up haijatokea
 };
+// n na odds (hiari): idadi ya mechi na jumla ya odds kama mechi hazipo kwenye TIPS
 const CODES = [
   {title:"Mkeka wa Siku", book:"Meridianbet", code:"933177", ids:[1,2,5,4]},
-  {title:"Mkeka wa Odds Kubwa", book:"1xBet", code:"BX7Q2LM", ids:[3,4,6,5,1]},
-  {title:"Mkeka wa Ushindi", book:"PMBet", code:"PM55214", ids:[1,2]},
+  {title:"Mkeka wa Odds Kubwa", book:"1xBet", code:"LSNHC", ids:[], n:5, odds:12.10},
+  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW77F8AE41", ids:[], n:3, odds:3.01},
 ];
 // Matokeo ya nyuma: d = tarehe (YYYY-MM-DD), won: 1 = imeingia, 0 = umechanika
 const RESULTS = [
@@ -849,8 +850,8 @@ $("#codes").innerHTML = CODES.map((c,i)=>{
   const b = bookBy(c.book), list = tipsOf(c.ids);
   return `<article class="code-card">
     <div class="ch"><div class="book-id">${logoImg(b,"logo-sm")}
-      <div><h3>${c.title}</h3><div class="meta">${b.name} · mechi ${list.length}</div></div></div>
-      <span class="odds-pill">${totalOdds(list).toFixed(2)}</span></div>
+      <div><h3>${c.title}</h3><div class="meta">${b.name} · mechi ${c.n ?? list.length}</div></div></div>
+      <span class="odds-pill">${(c.odds ?? totalOdds(list)).toFixed(2)}</span></div>
     <div class="code-box"><span class="code num">${c.code}</span><button class="btn btn-gold btn-sm" data-code="${c.code}">Nakili</button></div>
     <div class="code-date"><span class="eyebrow">Tarehe</span><b>${dLabel(new Date((c.date||MKEKA_DATE)+"T12:00:00"))}</b></div>
     ${b.promo?`<div class="join-strip">Huna akaunti ${b.name}? Jisajili kwa promo code <b class="num">${b.promo}</b> <button class="linkbtn" data-code="${b.promo}">Nakili</button></div>`:`<div class="join-strip">Huna akaunti ${b.name}? Jisajili bure, hakuna promo code inayohitajika.</div>`}
