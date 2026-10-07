@@ -217,6 +217,7 @@ select,input[type=number],input[type=text]{font:inherit;color:var(--fg);backgrou
 .sub-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:28px 0 12px;flex-wrap:wrap}
 .sub-head h3{font-size:1.4rem;text-transform:uppercase}
 .more-wrap{display:flex;justify-content:center;margin-top:14px}
+@media (min-width:761px){.tips-foot{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:14px}.tips-foot .more-wrap{grid-column:2;grid-row:1;margin-top:0}.tips-foot .note{grid-column:1;grid-row:1;margin:0}}
 .past-slips:not(.open) .ps:nth-child(n+9){display:none}
 @media (max-width:760px){.past-slips:not(.open) .ps:nth-child(n+7){display:none}}
 .past-slips{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
@@ -438,7 +439,10 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold)}
         </div>
       </div>
       <div class="tips" id="tips"></div>
-      <p class="note">Odds hubadilika; hakiki kwenye kampuni kabla ya kubeti.</p>
+      <div class="tips-foot">
+        <div class="more-wrap"><button class="btn btn-ghost btn-sm" id="tipsMore" hidden aria-expanded="false" aria-controls="tips">Onyesha zaidi</button></div>
+        <p class="note">Odds hubadilika; hakiki kwenye kampuni kabla ya kubeti.</p>
+      </div>
     </div>
   </section>
 
@@ -534,7 +538,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold)}
           <tbody id="resBody"></tbody>
         </table>
       </div>
-      <p class="note">Data iliyopo ni ya mfano. Badilisha safu ya RESULTS na PAST_SLIPS kwenye msimbo.</p>
     </div>
   </section>
 
@@ -685,16 +688,14 @@ const LOGOS = {"pmbet": "data:image/webp;base64,UklGRqwIAABXRUJQVlA4IKAIAABQOwCd
 /* ===== DATA: badilisha hapa ===== */
 // day: 0 = leo, 1 = kesho. conf: hi | md | lo
 const TIPS = [
-  {id:1, day:0, time:"16:00", league:"NBC Premier League", home:"Simba SC", away:"Coastal Union", market:"1X2", pick:"1 (Simba ashinde)", odd:1.45, conf:"hi"},
-  {id:2, day:0, time:"19:00", league:"NBC Premier League", home:"Young Africans", away:"KMC FC", market:"Over/Under", pick:"Over 1.5", odd:1.32, conf:"hi"},
-  {id:3, day:0, time:"17:00", league:"Premier League", home:"Arsenal", away:"Brighton", market:"1X2", pick:"1 (Arsenal ashinde)", odd:1.62, conf:"hi"},
-  {id:4, day:0, time:"19:30", league:"Premier League", home:"Aston Villa", away:"Newcastle", market:"GG/NG", pick:"GG", odd:1.70, conf:"md"},
-  {id:5, day:0, time:"22:00", league:"La Liga", home:"Real Betis", away:"Villarreal", market:"Double Chance", pick:"1X", odd:1.38, conf:"md"},
-  {id:6, day:0, time:"21:45", league:"Serie A", home:"Atalanta", away:"Torino", market:"Over/Under", pick:"Over 2.5", odd:1.85, conf:"lo"},
-  {id:7, day:1, time:"16:15", league:"NBC Premier League", home:"Azam FC", away:"Tanzania Prisons", market:"1X2", pick:"1 (Azam ashinde)", odd:1.55, conf:"hi"},
-  {id:8, day:1, time:"18:30", league:"Premier League", home:"Chelsea", away:"Fulham", market:"Over/Under", pick:"Over 2.5", odd:1.75, conf:"md"},
-  {id:9, day:1, time:"21:00", league:"La Liga", home:"Barcelona", away:"Sevilla", market:"Handicap", pick:"Barcelona -1", odd:1.90, conf:"md"},
-  {id:10,day:1, time:"21:45", league:"Bundesliga", home:"Bayern München", away:"Mainz", market:"1X2", pick:"1 (Bayern ashinde)", odd:1.22, conf:"hi"},
+  {id:1, day:0, time:"20:00", league:"Algeria Ligue 1", home:"CS Constantine", away:"Biskra", market:"Double Chance", pick:"12", odd:1.26, conf:"hi"},
+  {id:2, day:0, time:"22:00", league:"Algeria Ligue 1", home:"CR Belouizdad", away:"Khenchela", market:"Over/Under", pick:"Over 1.5", odd:1.31, conf:"hi"},
+  {id:3, day:0, time:"17:00", league:"Egypt League Cup", home:"A. Petroleum", away:"Al Ahly", market:"1X2", pick:"2 (Al Ahly ashinde)", odd:1.50, conf:"md"},
+  {id:4, day:0, time:"17:00", league:"Egypt League Cup", home:"Pyramids", away:"Al Qanah", market:"1X2", pick:"1 (Pyramids ashinde)", odd:1.59, conf:"md"},
+  {id:5, day:0, time:"19:00", league:"Veikkausliiga", home:"Gnistan", away:"Inter Turku", market:"Over/Under", pick:"Over 1.5", odd:1.21, conf:"hi"},
+  {id:6, day:0, time:"18:00", league:"Iraqi Stars League", home:"Al Mosul", away:"Al Quwa Al Jawiya", market:"Double Chance", pick:"X2", odd:1.27, conf:"hi"},
+  {id:7, day:0, time:"18:00", league:"Nigerian Professional League", home:"Shooting Stars", away:"Kano Pillars", market:"1X2", pick:"1 (Shooting Stars ashinde)", odd:1.47, conf:"md"},
+  {id:8, day:0, time:"14:30", league:"I Liqa", home:"Sahdag Kusar", away:"Zaqatala", market:"Over/Under", pick:"Over 1.5", odd:1.23, conf:"hi"},
 ];
 // Kampuni: name, logo (kutoka LOGOS), promo (acha "" kama hakuna), offer = ofa kubwa, offerNote = masharti mafupi
 // Ofa zimekusanywa Oktoba 2026 kutoka vyanzo vya umma; zihakiki mara kwa mara.
@@ -742,7 +743,7 @@ const MONTH_PICK = {book:"Meridianbet", month:"Oktoba 2026",
   popupDelay:2500 // milisekunde kabla pop-up haijatokea
 };
 const CODES = [
-  {title:"Mkeka wa Siku", book:"Meridianbet", code:"MB7K2QX", ids:[1,3,5,2]},
+  {title:"Mkeka wa Siku", book:"Meridianbet", code:"933177", ids:[1,2,5,4]},
   {title:"Mkeka wa Odds Kubwa", book:"1xBet", code:"BX7Q2LM", ids:[3,4,6,5,1]},
   {title:"Mkeka wa Ushindi", book:"PMBet", code:"PM55214", ids:[1,2]},
 ];
@@ -961,10 +962,18 @@ $("#pastSlips").innerHTML = PAST_SLIPS.map(p=>{ const b=bookBy(p.book); return `
 // Leagues
 [...new Set(TIPS.map(t=>t.league))].forEach(l => { const o=document.createElement("option"); o.value=l; o.textContent=l; $("#leagueSel").appendChild(o); });
 
+let tipsOpen = false;
+$("#tipsMore").addEventListener("click", ()=>{ tipsOpen = !tipsOpen; renderTips(); });
 function renderTips(){
   const list = TIPS.filter(t => t.day===state.day && (!state.league||t.league===state.league) && (!state.conf||t.conf===state.conf))
                    .sort((a,b)=>a.time.localeCompare(b.time));
-  $("#tips").innerHTML = list.length ? list.map(t => {
+  // Mkeka wa leo: mechi 6 zinaonekana, nyingine kwa "Onyesha zaidi"
+  const TIPS_LIMIT = 6, mb = $("#tipsMore");
+  mb.hidden = list.length <= TIPS_LIMIT;
+  mb.textContent = tipsOpen ? "Onyesha machache" : `Onyesha zaidi (${list.length - TIPS_LIMIT})`;
+  mb.setAttribute("aria-expanded", tipsOpen);
+  const shown = tipsOpen ? list : list.slice(0, TIPS_LIMIT);
+  $("#tips").innerHTML = shown.length ? shown.map(t => {
     const on = slip.some(s=>s.id===t.id);
     return `<div class="tip">
       <div class="time num">${t.time}</div>
