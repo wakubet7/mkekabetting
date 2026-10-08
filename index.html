@@ -263,6 +263,10 @@ select,input[type=number],input[type=text]{font:inherit;color:var(--fg);backgrou
 .code-box.promo .code{font-size:1.3rem}
 .no-promo{font-size:.84rem;color:var(--muted);padding:12px;border:1px dashed var(--line);border-radius:8px;text-align:center}
 .tc{font-size:.72rem;color:var(--muted);text-align:center}
+.book-acts{margin-top:auto;display:grid;gap:8px}.book-acts .btn{margin-top:0}
+.review-btn{color:var(--pitch);border-color:var(--pitch)}.review-btn:hover{background:color-mix(in srgb,var(--pitch) 8%,transparent)}
+:root[data-theme="dark"] .review-btn{color:var(--gold);border-color:var(--gold)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .review-btn{color:var(--gold);border-color:var(--gold)}}
 .logo-sm{width:58px;height:34px;border-radius:7px;object-fit:cover;flex:none;display:block}
 .linkbtn{background:none;border:0;padding:0;color:inherit;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
 .books{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
@@ -707,32 +711,32 @@ const TIPS = [
 // Kampuni: name, logo (kutoka LOGOS), promo (acha "" kama hakuna), offer = ofa kubwa, offerNote = masharti mafupi
 // Ofa zimekusanywa Oktoba 2026 kutoka vyanzo vya umma; zihakiki mara kwa mara.
 const BOOKS = [
-  {name:"Meridianbet", logo:"meridianbet", color:"#D23F2F", promo:"1029", featured:true,
+  {name:"Meridianbet", review:"tathmini-meridianbet.html", logo:"meridianbet", color:"#D23F2F", promo:"1029", featured:true,
    link:"https://a.meridianbet.co.tz/c/fnmZas",
    offer:"Ofa za wateja wapya kwa code 1029",
    offerNote:"Weka promo code 1029 unapojisajili ili upate ofa ya wateja wapya iliyopo sasa.",
    points:["Booking code za mikeka yetu ya kila siku","Deposit kwa M-Pesa, Mixx by Yas, Airtel Money, HaloPesa","Live betting na casino"]},
-  {name:"1xBet", logo:"1xbet", color:"#1A5BA6", promo:"BPBET",
+  {name:"1xBet", review:"tathmini-1xbet.html", logo:"1xbet", color:"#1A5BA6", promo:"BPBET",
    link:"https://reffpa.com/L?tag=d_52358m_1573c_&site=52358&ad=1573",
    offer:"Bonasi hadi 200% kwenye deposit ya kwanza",
-   offerNote:"Hadi takriban TSh 540,000. Deposit ya chini TSh 2,650. Bonasi ichezwe mara 8 kwenye accumulator ya mechi 3+ zenye odds 2.10+ kila moja, ndani ya siku 30.",
+   offerNote:"Hadi takriban TSh 540,000. Deposit ya chini TSh 1,000. Bonasi ichezwe mara 8 kwenye accumulator ya mechi 3+ zenye odds 2.10+ kila moja, ndani ya siku 30.",
    points:["Accumulator of the Day: odds +10%","Cashback kwenye ligi 5 kubwa za Ulaya","Advancebet: beti wakati beti nyingine bado hazijaisha"]},
-  {name:"PMBet", logo:"pmbet", color:"#3B3346", promo:"A21",
+  {name:"PMBet", review:"tathmini-pmbet.html", logo:"pmbet", color:"#3B3346", promo:"A21",
    link:"https://pmbet.co.tz/en/auth/signup/A21",
    offer:"Super Royal: zawadi za kila wiki na gari",
    offerNote:"Kusanya pointi kwa beti zinazoshinda. Zawadi za wiki hadi TSh 3,464,800 na Toyota IST kila wiki 5.",
    points:["Michezo bomba ya kasino","Deposit kuanzia TSh 100 kwa mitandao yote ya simu","Withdraw ndani ya saa 24","Boosted odds kwenye mechi teule"]},
-  {name:"Gal Sport Betting", logo:"galsport", color:"#1B4F9C", promo:"",
+  {name:"Gal Sport Betting", review:"tathmini-gal-sport-betting.html", logo:"galsport", color:"#1B4F9C", promo:"",
    link:"https://track.africabetpartners.com/visit/?bta=35065&nci=6131",
    offer:"Bonasi 100% hadi TSh 1,000,000",
    offerNote:"Kwenye deposit ya kwanza, bila promo code. Ichezwe mara 3 kwenye accumulator ya mechi 5+ (odds 1.50+ kila moja, jumla 7.50+) ndani ya siku 30.",
    points:["Ofa kwa wateja wapya wenye miaka 18+","Deposit na withdraw kwa simu"]},
-  {name:"Betwinner", logo:"betwinner", color:"#12804E", promo:"BPBET",
+  {name:"Betwinner", review:"tathmini-betwinner.html", logo:"betwinner", color:"#12804E", promo:"BPBET",
    link:"https://bw-prm.com/bonus-100-01/?id=10Iw",
    offer:"Bonasi 100% hadi TSh 300,000",
    offerNote:"Kwenye deposit ya kwanza. Bonasi ichezwe mara 5 kwenye accumulator ya mechi 3+ zenye odds 1.40+.",
    points:["Bonasi ya Alhamisi: 100% kwa deposit ya TSh 25,000–250,000","Cashback 3% kila wiki kwenye beti zilizochanika","Bonasi baada ya beti 20 mfululizo kuchanika"]},
-  {name:"Betway", logo:"betway", color:"#111111", promo:"",
+  {name:"Betway", review:"tathmini-betway.html", logo:"betway", color:"#111111", promo:"",
    link:"https://www.betway.co.za/?btag=P60847-PR26266-CM87588-TS196151&",
    offer:"Ofa za wateja wapya",
    offerNote:"Jisajili kupitia kiungo chetu kuona ofa ya kujiunga iliyopo sasa.",
@@ -1030,7 +1034,10 @@ $("#books").innerHTML = BOOKS.map(b=>`
       <p class="offer-note">${b.offerNote}</p>
       ${b.promo?`<div class="code-box promo"><div><div class="eyebrow">Promo code</div><span class="code num">${b.promo}</span></div><button class="btn btn-gold btn-sm" data-code="${b.promo}">Nakili</button></div>`:`<div class="no-promo">Hakuna promo code inayohitajika</div>`}
       <ul>${b.points.map(p=>`<li>${p}</li>`).join("")}</ul>
-      <a class="btn btn-gold" href="${b.link}" rel="sponsored noopener" target="_blank">Jisajili ${b.name}</a>
+      <div class="book-acts">
+        <a class="btn btn-gold" href="${b.link}" rel="sponsored noopener" target="_blank">Jisajili ${b.name}</a>
+        ${b.review?`<a class="btn btn-ghost review-btn" href="${b.review}">Soma tathmini ya ${b.name}</a>`:''}
+      </div>
       <span class="tc">18+ · Masharti yanatumika</span>
     </div>
   </article>`).join("");
