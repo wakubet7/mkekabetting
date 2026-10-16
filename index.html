@@ -700,18 +700,18 @@ const LOGOS = {"pmbet": "data:image/webp;base64,UklGRqwIAABXRUJQVlA4IKAIAABQOwCd
 /* ===== DATA: badilisha hapa ===== */
 // day: 0 = leo, 1 = kesho. conf: hi | md | lo
 const TIPS = [
-  {id:1, day:0, time:"19:45", league:"Europa League", home:"Lech Poznan", away:"Bayer Leverkusen", market:"1X2", pick:"2 (Bayer Leverkusen ashinde)", odd:1.60, conf:"md"},
-  {id:2, day:0, time:"19:45", league:"Europa League", home:"Lyon", away:"Crystal Palace", market:"Double Chance", pick:"12", odd:1.28, conf:"hi"},
-  {id:3, day:0, time:"19:45", league:"Europa League", home:"Salzburg", away:"AC Milan", market:"Double Chance", pick:"X2", odd:1.29, conf:"hi"},
-  {id:4, day:0, time:"19:45", league:"Europa League", home:"Royale Union SG", away:"Real Sociedad", market:"Over/Under", pick:"Over 1.5", odd:1.19, conf:"hi"},
-  {id:5, day:0, time:"19:45", league:"Europa League", home:"Torreense", away:"Sunderland", market:"1X2", pick:"2 (Sunderland ashinde)", odd:1.36, conf:"md"},
-  {id:6, day:0, time:"22:00", league:"Europa League", home:"Benfica", away:"Celtic", market:"1X2", pick:"1 (Benfica ashinde)", odd:1.25, conf:"hi"},
-  {id:7, day:0, time:"22:00", league:"Europa League", home:"Celta Vigo", away:"Juventus", market:"Double Chance", pick:"12", odd:1.34, conf:"md"},
-  {id:8, day:0, time:"22:00", league:"Europa League", home:"Bournemouth", away:"Sturm Graz", market:"1X2", pick:"1 (Bournemouth ashinde)", odd:1.20, conf:"hi"},
-  {id:9, day:0, time:"22:00", league:"Europa League", home:"Marseille", away:"Olympiacos", market:"Over/Under", pick:"Over 1.5", odd:1.24, conf:"hi"},
-  {id:10,day:0, time:"19:45", league:"Conference League", home:"CSKA Sofia", away:"Monaco", market:"Over/Under", pick:"Over 1.5", odd:1.20, conf:"hi"},
-  {id:11,day:0, time:"22:00", league:"Conference League", home:"Atalanta", away:"Pafos", market:"1X2", pick:"1 (Atalanta ashinde)", odd:1.35, conf:"md"},
-  {id:12,day:0, time:"20:00", league:"Conference League", home:"Brighton", away:"Kauno Zalgiris", market:"Over/Under", pick:"Second Half Over 1.5", odd:1.34, conf:"md"},
+  {id:1, day:0, time:"17:30", league:"Algeria Ligue 1", home:"Olympique Akbou", away:"Ben Aknoun", market:"Over/Under", pick:"Over 1.5", odd:1.45, conf:"md"},
+  {id:2, day:0, time:"22:00", league:"Championship", home:"Burnley", away:"Wolves", market:"Over/Under", pick:"Over 1.5", odd:1.26, conf:"hi"},
+  {id:3, day:0, time:"21:45", league:"Ligue 1", home:"Le Mans", away:"Toulouse", market:"Over/Under", pick:"Over 1.5", odd:1.20, conf:"hi"},
+  {id:4, day:0, time:"21:30", league:"Bundesliga", home:"Eintracht Frankfurt", away:"FC Koln", market:"Double Chance", pick:"1X", odd:1.27, conf:"hi"},
+  {id:5, day:0, time:"21:45", league:"Serie A", home:"Frosinone", away:"Sassuolo", market:"Double Chance", pick:"12", odd:1.27, conf:"hi"},
+  {id:6, day:0, time:"22:00", league:"La Liga", home:"Deportivo La Coruna", away:"Levante", market:"Double Chance", pick:"1X", odd:1.28, conf:"hi"},
+  {id:7, day:0, time:"16:15", league:"Saudi Pro League", home:"Al Qadsiah", away:"Abha", market:"1X2", pick:"1 (Al Qadsiah ashinde)", odd:1.12, conf:"hi"},
+  {id:8, day:0, time:"20:00", league:"Super Lig", home:"Corum", away:"Rizespor", market:"Over/Under", pick:"Over 1.5", odd:1.21, conf:"hi"},
+  {id:9, day:0, time:"16:00", league:"NBC Premier League", home:"Fountain Gate", away:"Pamba", market:"Double Chance", pick:"12", odd:1.30, conf:"hi"},
+  {id:10,day:0, time:"19:00", league:"NBC Premier League", home:"Geita Gold", away:"Dodoma FC", market:"Double Chance", pick:"1X", odd:1.30, conf:"hi"},
+  {id:11,day:0, time:"20:00", league:"Superliga", home:"Horsens", away:"Randers", market:"Over/Under", pick:"Over 1.5", odd:1.24, conf:"hi"},
+  {id:12,day:0, time:"21:00", league:"Eredivisie", home:"Heerenveen", away:"Excelsior", market:"1X2", pick:"1 (Heerenveen ashinde)", odd:1.53, conf:"md"},
 ];
 // Kampuni: name, logo (kutoka LOGOS), promo (acha "" kama hakuna), offer = ofa kubwa, offerNote = masharti mafupi
 // Ofa zimekusanywa Oktoba 2026 kutoka vyanzo vya umma; zihakiki mara kwa mara.
@@ -749,7 +749,7 @@ const BOOKS = [
 ];
 // TAREHE YA MKEKA: badilisha hii kila unapoweka mikeka mipya (YYYY-MM-DD).
 // Tarehe kwenye hero na kwenye kadi za code haibadiliki yenyewe.
-const MKEKA_DATE = "2026-10-15";
+const MKEKA_DATE = "2026-10-16";
 // Code za mkeka. Kadi inaweza kuwa na date:"YYYY-MM-DD" yake (bila hivyo inatumia MKEKA_DATE). Ya kwanza ndiyo "Mkeka wa Siku" kwenye tiketi ya juu.
 // book lazima ilingane na jina kwenye BOOKS (ili kiungo na rangi vipatikane)
 // Kampuni Bora kwa Sasa: chagua kampuni (jina sawa na BOOKS) na sababu
@@ -761,16 +761,28 @@ const MONTH_PICK = {book:"Meridianbet", month:"Oktoba 2026",
 // n na odds (hiari): idadi ya mechi na jumla ya odds kama mechi hazipo kwenye TIPS
 // tips (hiari): mechi za mkeka zilizoandikwa moja kwa moja (time, home, away, pick, odd) badala ya ids
 const CODES = [
-  {title:"Mkeka wa Siku", book:"Meridianbet", code:"1493274", ids:[], tips:[
+  {title:"Mkeka wa Siku", book:"Meridianbet", code:"1493274", ids:[], date:"2026-10-15", tips:[
     {time:"19:45", home:"HNK Hajduk Split", away:"Ajax", pick:"2 (Ajax ashinde)", odd:1.62},
     {time:"19:45", home:"FC Salzburg", away:"AC Milan", pick:"2 (AC Milan ashinde)", odd:2.00},
     {time:"22:00", home:"Atalanta", away:"Pafos FC", pick:"1 (Atalanta ashinde)", odd:1.35},
   ]},
-  {title:"Odds Kubwa", book:"1xBet", code:"D6EMS", ids:[], n:7, odds:10.02},
-  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW79F4BC7F", ids:[], n:4, odds:5.05},
+  {title:"Odds Kubwa", book:"1xBet", code:"D6EMS", ids:[], n:7, odds:10.02, date:"2026-10-15"},
+  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW79F4BC7F", ids:[], n:4, odds:5.05, date:"2026-10-15"},
 ];
 // Matokeo ya nyuma: d = tarehe (YYYY-MM-DD), won: 1 = imeingia, 0 = umechanika
 const RESULTS = [
+  {d:"2026-10-15",league:"Europa League",match:"Lech Poznan – Bayer Leverkusen",market:"1X2",pick:"2",odd:1.60,score:"0–4",won:1},
+  {d:"2026-10-15",league:"Europa League",match:"Lyon – Crystal Palace",market:"Double Chance",pick:"12",odd:1.28,score:"3–2",won:1},
+  {d:"2026-10-15",league:"Europa League",match:"Salzburg – AC Milan",market:"Double Chance",pick:"X2",odd:1.29,score:"0–4",won:1},
+  {d:"2026-10-15",league:"Europa League",match:"Royale Union SG – Real Sociedad",market:"Over/Under",pick:"Over 1.5",odd:1.19,score:"1–1",won:1},
+  {d:"2026-10-15",league:"Europa League",match:"Torreense – Sunderland",market:"1X2",pick:"2",odd:1.36,score:"1–2",won:1},
+  {d:"2026-10-15",league:"Europa League",match:"Benfica – Celtic",market:"1X2",pick:"1",odd:1.25,score:"4–1",won:1},
+  {d:"2026-10-15",league:"Europa League",match:"Celta Vigo – Juventus",market:"Double Chance",pick:"12",odd:1.34,score:"1–2",won:1},
+  {d:"2026-10-15",league:"Europa League",match:"Bournemouth – Sturm Graz",market:"1X2",pick:"1",odd:1.20,score:"3–0",won:1},
+  {d:"2026-10-15",league:"Europa League",match:"Marseille – Olympiacos",market:"Over/Under",pick:"Over 1.5",odd:1.24,score:"0–1",won:0},
+  {d:"2026-10-15",league:"Conference League",match:"CSKA Sofia – Monaco",market:"Over/Under",pick:"Over 1.5",odd:1.20,score:"1–2",won:1},
+  {d:"2026-10-15",league:"Conference League",match:"Atalanta – Pafos",market:"1X2",pick:"1",odd:1.35,score:"3–1",won:1},
+  {d:"2026-10-15",league:"Conference League",match:"Brighton – Kauno Zalgiris",market:"Over/Under",pick:"Second Half Over 1.5",odd:1.34,score:"4–0",won:1},
   {d:"2026-10-14",league:"Champions League",match:"Feyenoord – Como",market:"Double Chance",pick:"12",odd:1.25,score:"3–2",won:1},
   {d:"2026-10-14",league:"Champions League",match:"LASK – Liverpool",market:"1X2",pick:"2",odd:1.38,score:"3–6",won:1},
   {d:"2026-10-14",league:"Champions League",match:"AS Roma – Real Madrid",market:"Double Chance",pick:"12",odd:1.25,score:"3–4",won:1},
@@ -932,6 +944,7 @@ $("#tBookName2").textContent = tBook.name;
 $("#tBookLink").href = tBook.link;
 $("#tBookLink").textContent = "Fungua " + tBook.name;
 $("#tCode").textContent = TICKET.code;
+if(TICKET.date) $("#ticketDate").textContent = dLabel(new Date(TICKET.date+"T12:00:00"));
 if(tBook.promo){ $("#tPromo").hidden=false; $("#tPromoCode").textContent=tBook.promo; $("#tPromoBtn").addEventListener("click",e=>copyText(tBook.promo,e.currentTarget)); }
 $("#ticketRows").innerHTML = ticketTips.map(t=>`
   <div class="t-row"><div class="m">${t.home} – ${t.away}</div><div class="o num">${t.odd.toFixed(2)}</div>
