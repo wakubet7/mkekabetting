@@ -700,18 +700,18 @@ const LOGOS = {"pmbet": "data:image/webp;base64,UklGRqwIAABXRUJQVlA4IKAIAABQOwCd
 /* ===== DATA: badilisha hapa ===== */
 // day: 0 = leo, 1 = kesho. conf: hi | md | lo
 const TIPS = [
-  {id:1, day:0, time:"14:30", league:"Premier League", home:"Everton", away:"Chelsea", market:"Over/Under", pick:"Over 1.5", odd:1.20, conf:"hi"},
-  {id:2, day:0, time:"17:00", league:"Premier League", home:"Brentford", away:"Liverpool", market:"Double Chance", pick:"12", odd:1.29, conf:"hi"},
-  {id:3, day:0, time:"17:00", league:"Premier League", home:"Manchester City", away:"Ipswich", market:"1X2", pick:"1 (Manchester City ashinde)", odd:1.25, conf:"hi"},
-  {id:4, day:0, time:"19:30", league:"Premier League", home:"Newcastle", away:"Aston Villa", market:"Double Chance", pick:"12", odd:1.29, conf:"hi"},
-  {id:5, day:0, time:"18:15", league:"Ligue 1", home:"Strasbourg", away:"PSG", market:"1X2", pick:"2 (PSG ashinde)", odd:1.43, conf:"md"},
-  {id:6, day:0, time:"16:30", league:"Bundesliga", home:"Union Berlin", away:"Dortmund", market:"1X2", pick:"2 (Dortmund ashinde)", odd:1.59, conf:"md"},
-  {id:7, day:0, time:"19:30", league:"Bundesliga", home:"Bayern Munich", away:"RB Leipzig", market:"1X2", pick:"1 (Bayern Munich ashinde)", odd:1.21, conf:"hi"},
-  {id:8, day:0, time:"15:00", league:"La Liga", home:"Espanyol", away:"Atletico Madrid", market:"Over/Under", pick:"Over 1.5", odd:1.21, conf:"hi"},
-  {id:9, day:0, time:"19:30", league:"La Liga", home:"Real Betis", away:"Barcelona", market:"Over/Under", pick:"Over 2.5", odd:1.23, conf:"hi"},
-  {id:10,day:0, time:"17:30", league:"Eredivisie", home:"Den Haag", away:"PSV", market:"1X2", pick:"2 (PSV ashinde)", odd:1.27, conf:"hi"},
-  {id:11,day:0, time:"21:00", league:"Eredivisie", home:"Telstar", away:"Feyenoord", market:"1X2", pick:"2 (Feyenoord ashinde)", odd:1.33, conf:"md"},
-  {id:12,day:0, time:"16:00", league:"Super Lig", home:"Genclerbirligi", away:"Galatasaray", market:"1X2", pick:"2 (Galatasaray ashinde)", odd:1.37, conf:"md"},
+  {id:1, day:0, time:"16:00", league:"Premier League", home:"Bournemouth", away:"Sunderland", market:"Double Chance", pick:"12", odd:1.32, conf:"md"},
+  {id:2, day:0, time:"16:00", league:"Premier League", home:"Brighton", away:"Crystal Palace", market:"Over/Under", pick:"Over 1.5", odd:1.17, conf:"hi"},
+  {id:3, day:0, time:"16:00", league:"Premier League", home:"Leeds United", away:"Manchester United", market:"Over/Under", pick:"Over 1.5", odd:1.22, conf:"hi"},
+  {id:4, day:0, time:"18:30", league:"Premier League", home:"Nottingham Forest", away:"Arsenal", market:"Double Chance", pick:"12", odd:1.24, conf:"hi"},
+  {id:5, day:0, time:"21:45", league:"Ligue 1", home:"Lyon", away:"Nice", market:"Double Chance", pick:"1X", odd:1.26, conf:"hi"},
+  {id:6, day:0, time:"16:30", league:"Bundesliga", home:"Bayer Leverkusen", away:"Freiburg", market:"Double Chance", pick:"1X", odd:1.20, conf:"hi"},
+  {id:7, day:0, time:"16:00", league:"Serie A", home:"Fiorentina", away:"Como", market:"Double Chance", pick:"12", odd:1.29, conf:"hi"},
+  {id:8, day:0, time:"19:00", league:"Serie A", home:"AC Milan", away:"Atalanta", market:"Double Chance", pick:"1X", odd:1.21, conf:"hi"},
+  {id:9, day:0, time:"21:45", league:"Serie A", home:"Juventus", away:"Lazio", market:"Over/Under", pick:"Over 1.5", odd:1.29, conf:"hi"},
+  {id:10,day:0, time:"15:30", league:"Eredivisie", home:"Cambuur", away:"AZ Alkmaar", market:"1X2", pick:"2 (AZ Alkmaar ashinde)", odd:1.48, conf:"md"},
+  {id:11,day:0, time:"17:45", league:"Eredivisie", home:"Groningen", away:"Ajax", market:"Double Chance", pick:"12", odd:1.23, conf:"hi"},
+  {id:12,day:0, time:"22:00", league:"La Liga", home:"Real Madrid", away:"Sevilla", market:"1X2", pick:"1 (Real Madrid ashinde)", odd:1.25, conf:"hi"},
 ];
 // Kampuni: name, logo (kutoka LOGOS), promo (acha "" kama hakuna), offer = ofa kubwa, offerNote = masharti mafupi
 // Ofa zimekusanywa Oktoba 2026 kutoka vyanzo vya umma; zihakiki mara kwa mara.
@@ -749,7 +749,7 @@ const BOOKS = [
 ];
 // TAREHE YA MKEKA: badilisha hii kila unapoweka mikeka mipya (YYYY-MM-DD).
 // Tarehe kwenye hero na kwenye kadi za code haibadiliki yenyewe.
-const MKEKA_DATE = "2026-10-17";
+const MKEKA_DATE = "2026-10-18";
 // Code za mkeka. Kadi inaweza kuwa na date:"YYYY-MM-DD" yake (bila hivyo inatumia MKEKA_DATE). Ya kwanza ndiyo "Mkeka wa Siku" kwenye tiketi ya juu.
 // book lazima ilingane na jina kwenye BOOKS (ili kiungo na rangi vipatikane)
 // Kampuni Bora kwa Sasa: chagua kampuni (jina sawa na BOOKS) na sababu
@@ -761,16 +761,28 @@ const MONTH_PICK = {book:"Meridianbet", month:"Oktoba 2026",
 // n na odds (hiari): idadi ya mechi na jumla ya odds kama mechi hazipo kwenye TIPS
 // tips (hiari): mechi za mkeka zilizoandikwa moja kwa moja (time, home, away, pick, odd) badala ya ids
 const CODES = [
-  {title:"Mkeka wa Siku", book:"Meridianbet", code:"587357", ids:[], tips:[
-    {time:"14:30", home:"Everton", away:"Chelsea", pick:"GG", odd:1.55},
-    {time:"15:00", home:"Espanyol", away:"Atletico Madrid", pick:"2 (Atletico Madrid ashinde)", odd:1.63},
-    {time:"16:00", home:"Venezia", away:"Napoli", pick:"2 (Napoli ashinde)", odd:1.68},
+  {title:"Mkeka wa Siku", book:"Meridianbet", code:"397347", ids:[], tips:[
+    {time:"16:00", home:"Bournemouth", away:"Sunderland", pick:"GG", odd:1.74},
+    {time:"16:00", home:"Brighton", away:"Crystal Palace", pick:"1 (Brighton ashinde)", odd:1.45},
+    {time:"18:30", home:"Nottingham Forest", away:"Arsenal", pick:"2 (Arsenal ashinde)", odd:1.54},
   ]},
-  {title:"Odds Kubwa", book:"1xBet", code:"HB87X", ids:[], n:10, odds:42.91},
-  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW7A7CE76C", ids:[], n:5, odds:6.48},
+  {title:"Odds Kubwa", book:"1xBet", code:"FCQ21", ids:[], n:9, odds:36.81},
+  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW7AE1C2F7", ids:[], n:5, odds:6.16},
 ];
 // Matokeo ya nyuma: d = tarehe (YYYY-MM-DD), won: 1 = imeingia, 0 = umechanika
 const RESULTS = [
+  {d:"2026-10-17",league:"Premier League",match:"Everton – Chelsea",market:"Over/Under",pick:"Over 1.5",odd:1.20,score:"0–2",won:1},
+  {d:"2026-10-17",league:"Premier League",match:"Brentford – Liverpool",market:"Double Chance",pick:"12",odd:1.29,score:"1–2",won:1},
+  {d:"2026-10-17",league:"Premier League",match:"Manchester City – Ipswich",market:"1X2",pick:"1",odd:1.25,score:"3–2",won:1},
+  {d:"2026-10-17",league:"Premier League",match:"Newcastle – Aston Villa",market:"Double Chance",pick:"12",odd:1.29,score:"0–1",won:1},
+  {d:"2026-10-17",league:"Ligue 1",match:"Strasbourg – PSG",market:"1X2",pick:"2",odd:1.43,score:"1–3",won:1},
+  {d:"2026-10-17",league:"Bundesliga",match:"Union Berlin – Dortmund",market:"1X2",pick:"2",odd:1.59,score:"0–0",won:0},
+  {d:"2026-10-17",league:"Bundesliga",match:"Bayern Munich – RB Leipzig",market:"1X2",pick:"1",odd:1.21,score:"6–1",won:1},
+  {d:"2026-10-17",league:"La Liga",match:"Espanyol – Atletico Madrid",market:"Over/Under",pick:"Over 1.5",odd:1.21,score:"0–1",won:0},
+  {d:"2026-10-17",league:"La Liga",match:"Real Betis – Barcelona",market:"Over/Under",pick:"Over 2.5",odd:1.23,score:"2–5",won:1},
+  {d:"2026-10-17",league:"Eredivisie",match:"Den Haag – PSV",market:"1X2",pick:"2",odd:1.27,score:"2–1",won:0},
+  {d:"2026-10-17",league:"Eredivisie",match:"Telstar – Feyenoord",market:"1X2",pick:"2",odd:1.33,score:"3–4",won:1},
+  {d:"2026-10-17",league:"Super Lig",match:"Genclerbirligi – Galatasaray",market:"1X2",pick:"2",odd:1.37,score:"0–1",won:1},
   {d:"2026-10-16",league:"Algeria Ligue 1",match:"Olympique Akbou – Ben Aknoun",market:"Over/Under",pick:"Over 1.5",odd:1.45,score:"2–1",won:1},
   {d:"2026-10-16",league:"Championship",match:"Burnley – Wolves",market:"Over/Under",pick:"Over 1.5",odd:1.26,score:"1–2",won:1},
   {d:"2026-10-16",league:"Ligue 1",match:"Le Mans – Toulouse",market:"Over/Under",pick:"Over 1.5",odd:1.20,score:"0–3",won:1},
@@ -886,6 +898,9 @@ const RESULTS = [
 ];
 // Mikeka ya nyuma (pamoja na code zake)
 const PAST_SLIPS = [
+  {d:"2026-10-17", title:"Mkeka wa Siku", book:"Meridianbet", code:"587357", legs:3, odds:4.24, won:0},
+  {d:"2026-10-17", title:"Odds Kubwa", book:"1xBet", code:"HB87X", legs:10, odds:42.91, won:0},
+  {d:"2026-10-17", title:"Mkeka wa Ushindi", book:"Betway", code:"BW7A7CE76C", legs:5, odds:6.48, won:1},
   {d:"2026-10-16", title:"Mkeka wa Siku", book:"Meridianbet", code:"234007", legs:3, odds:4.27, won:0},
   {d:"2026-10-16", title:"Odds Kubwa", book:"1xBet", code:"RA3AU", legs:7, odds:29.47, won:1},
   {d:"2026-10-16", title:"Mkeka wa Ushindi", book:"Betway", code:"BW7A450713", legs:3, odds:4.49, won:1},
