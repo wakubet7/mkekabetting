@@ -235,6 +235,7 @@ select,input[type=number],input[type=text]{font:inherit;color:var(--fg);backgrou
 .badge{font-family:var(--f-mono);font-size:.7rem;font-weight:700;padding:.25em .55em;border-radius:999px;white-space:nowrap}
 .badge.w{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
 .badge.l{background:color-mix(in srgb,var(--coral) 16%,transparent);color:var(--coral)}
+.badge.p{background:color-mix(in srgb,var(--muted) 16%,transparent);color:var(--muted)}
 .res-tbl{max-height:520px;overflow:auto}
 .archive-links{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px}
 .archive-links .links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -708,18 +709,18 @@ const LOGOS = {"pmbet": "data:image/webp;base64,UklGRqwIAABXRUJQVlA4IKAIAABQOwCd
 /* ===== DATA: badilisha hapa ===== */
 // day: 0 = leo, 1 = kesho. conf: hi | md | lo
 const TIPS = [
-  {id:1, day:0, time:"12:30", league:"SAFF Championship", home:"India", away:"Maldives", market:"Over/Under", pick:"Over 2.5", odd:1.41, conf:"md"},
-  {id:2, day:0, time:"17:00", league:"SAFF Championship", home:"Bangladesh", away:"Sri Lanka", market:"Double Chance", pick:"12", odd:1.29, conf:"hi"},
-  {id:3, day:0, time:"14:30", league:"Belarusian Cup", home:"Orsha", away:"BATE", market:"1X2", pick:"2 (BATE ashinde)", odd:1.17, conf:"hi"},
-  {id:4, day:0, time:"16:30", league:"Belgian Nationale 1", home:"Onhaye", away:"Habay La Neuve", market:"Double Chance", pick:"12", odd:1.27, conf:"hi"},
-  {id:5, day:0, time:"20:00", league:"Cameroon Elite 1", home:"Colombe", away:"Victoria United", market:"1X2", pick:"1 (Colombe ashinde)", odd:1.26, conf:"hi"},
-  {id:6, day:0, time:"20:00", league:"MOL Cup", home:"Artis Brno", away:"Jablonec", market:"Over/Under", pick:"Over 1.5", odd:1.24, conf:"hi"},
-  {id:7, day:0, time:"13:00", league:"J. League Cup", home:"Kawasaki Frontale", away:"Kashiwa Reysol", market:"Double Chance", pick:"12", odd:1.25, conf:"hi"},
-  {id:8, day:0, time:"13:00", league:"J. League Cup", home:"Vissel Kobe", away:"Machida", market:"Over/Under", pick:"Over 1.5", odd:1.31, conf:"hi"},
-  {id:9, day:0, time:"13:00", league:"J. League Cup", home:"Yokohama F. Marinos", away:"Kashima Antlers", market:"Over/Under", pick:"Over 1.5", odd:1.2, conf:"hi"},
-  {id:10,day:0, time:"13:30", league:"J. League Cup", home:"Urawa Reds", away:"Cerezo Osaka", market:"Double Chance", pick:"1X", odd:1.25, conf:"hi"},
-  {id:11,day:0, time:"12:30", league:"Persha Liga", home:"FC Chernihiv", away:"Inhulets", market:"Over/Under", pick:"Over 1.5", odd:1.25, conf:"hi"},
-  {id:12,day:0, time:"18:00", league:"Slovak Cup", home:"Podbrezova", away:"Z. Moravce-Vrable", market:"1X2", pick:"1 (Podbrezova ashinde)", odd:1.21, conf:"hi"},
+  {id:1, day:0, time:"20:00", league:"UEFA Nations League", home:"Turkey", away:"Belgium", market:"Double Chance", pick:"X2", odd:1.25, conf:"hi"},
+  {id:2, day:0, time:"20:00", league:"UEFA Nations League", home:"Armenia", away:"Cyprus", market:"Over/Under", pick:"Over 1.5", odd:1.32, conf:"md"},
+  {id:3, day:0, time:"22:45", league:"UEFA Nations League", home:"England", away:"Croatia", market:"1X2", pick:"1 (England ashinde)", odd:1.17, conf:"hi"},
+  {id:4, day:0, time:"22:45", league:"UEFA Nations League", home:"Italy", away:"France", market:"Double Chance", pick:"12", odd:1.27, conf:"hi"},
+  {id:5, day:0, time:"22:45", league:"UEFA Nations League", home:"Czechia", away:"Spain", market:"1X2", pick:"2 (Spain ashinde)", odd:1.2, conf:"hi"},
+  {id:6, day:0, time:"22:45", league:"UEFA Nations League", home:"Montenegro", away:"Latvia", market:"Over/Under", pick:"Over 1.5", odd:1.26, conf:"hi"},
+  {id:7, day:0, time:"22:45", league:"UEFA Nations League", home:"Albania", away:"Finland", market:"Double Chance", pick:"1X", odd:1.21, conf:"hi"},
+  {id:8, day:0, time:"22:45", league:"UEFA Nations League", home:"San Marino", away:"Belarus", market:"Over/Under", pick:"Over 1.5", odd:1.2, conf:"hi"},
+  {id:9, day:0, time:"19:00", league:"Africa Cup of Nations", home:"D.R. Congo", away:"Sierra Leone", market:"1X2", pick:"1 (D.R. Congo ashinde)", odd:1.23, conf:"hi"},
+  {id:10,day:0, time:"19:00", league:"Africa Cup of Nations", home:"Guinea", away:"Eritrea", market:"1X2", pick:"1 (Guinea ashinde)", odd:1.21, conf:"hi"},
+  {id:11,day:0, time:"22:00", league:"Africa Cup of Nations", home:"Ivory Coast", away:"Gambia", market:"1X2", pick:"1 (Ivory Coast ashinde)", odd:1.2, conf:"hi"},
+  {id:12,day:0, time:"22:00", league:"Africa Cup of Nations", home:"Cameroon", away:"Namibia", market:"1X2", pick:"1 (Cameroon ashinde)", odd:1.30, conf:"hi"},
 ];
 // Kampuni: name, logo (kutoka LOGOS), promo (acha "" kama hakuna), offer = ofa kubwa, offerNote = masharti mafupi
 // Ofa zimekusanywa Oktoba 2026 kutoka vyanzo vya umma; zihakiki mara kwa mara.
@@ -757,7 +758,7 @@ const BOOKS = [
 ];
 // TAREHE YA MKEKA: badilisha hii kila unapoweka mikeka mipya (YYYY-MM-DD).
 // Tarehe kwenye hero na kwenye kadi za code haibadiliki yenyewe.
-const MKEKA_DATE = "2026-11-11";
+const MKEKA_DATE = "2026-11-12";
 // Code za mkeka. Kadi inaweza kuwa na date:"YYYY-MM-DD" yake (bila hivyo inatumia MKEKA_DATE). Ya kwanza ndiyo "Mkeka wa Siku" kwenye tiketi ya juu.
 // book lazima ilingane na jina kwenye BOOKS (ili kiungo na rangi vipatikane)
 // Kampuni Bora kwa Sasa: chagua kampuni (jina sawa na BOOKS) na sababu
@@ -769,16 +770,28 @@ const MONTH_PICK = {book:"Meridianbet", month:"Oktoba 2026",
 // n na odds (hiari): idadi ya mechi na jumla ya odds kama mechi hazipo kwenye TIPS
 // tips (hiari): mechi za mkeka zilizoandikwa moja kwa moja (time, home, away, pick, odd) badala ya ids
 const CODES = [
-  {title:"Mkeka wa Siku", book:"Meridianbet", code:"451711", ids:[], tips:[
-    {time:"13:00", home:"Azerbaijan U19", away:"Montenegro U19", pick:"2 (Montenegro ashinde)", odd:1.73},
-    {time:"17:30", home:"Italy U19", away:"Romania U19", pick:"1 (Italy ashinde)", odd:1.44},
-    {time:"20:00", home:"France U19", away:"Norway U19", pick:"1 (France ashinde)", odd:1.62},
+  {title:"Mkeka wa Siku", book:"Meridianbet", code:"1669616", ids:[], tips:[
+    {time:"20:00", home:"Turkey", away:"Belgium", pick:"2 (Belgium ashinde)", odd:1.85},
+    {time:"22:45", home:"Italy", away:"France", pick:"2 (France ashinde)", odd:1.9},
+    {time:"22:45", home:"England", away:"Croatia", pick:"GG", odd:1.77},
   ]},
-  {title:"Odds Kubwa", book:"1xBet", code:"21M5L", ids:[], n:8, odds:42.24},
-  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW81D7EFB6", ids:[], n:4, odds:5.92},
+  {title:"Odds Kubwa", book:"1xBet", code:"8ESB5", ids:[], n:5, odds:20.99},
+  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW82056327", ids:[], n:4, odds:6.95},
 ];
 // Matokeo ya nyuma: d = tarehe (YYYY-MM-DD), won: 1 = imeingia, 0 = umechanika
 const RESULTS = [
+  {d:"2026-11-11",league:"SAFF Championship",match:"India – Maldives",market:"Over/Under",pick:"Over 2.5",odd:1.41,score:"1–0",won:0},
+  {d:"2026-11-11",league:"SAFF Championship",match:"Bangladesh – Sri Lanka",market:"Double Chance",pick:"12",odd:1.29,score:"4–0",won:1},
+  {d:"2026-11-11",league:"Belarusian Cup",match:"Orsha – BATE",market:"1X2",pick:"2",odd:1.17,score:"2–2",won:0},
+  {d:"2026-11-11",league:"Belgian Nationale 1",match:"Onhaye – Habay La Neuve",market:"Double Chance",pick:"12",odd:1.27,score:"1–0",won:1},
+  {d:"2026-11-11",league:"Cameroon Elite 1",match:"Colombe – Victoria United",market:"1X2",pick:"1",odd:1.26,score:"2–1",won:1},
+  {d:"2026-11-11",league:"MOL Cup",match:"Artis Brno – Jablonec",market:"Over/Under",pick:"Over 1.5",odd:1.24,score:"2–1",won:1},
+  {d:"2026-11-11",league:"J. League Cup",match:"Kawasaki Frontale – Kashiwa Reysol",market:"Double Chance",pick:"12",odd:1.25,score:"1–2",won:1},
+  {d:"2026-11-11",league:"J. League Cup",match:"Vissel Kobe – Machida",market:"Over/Under",pick:"Over 1.5",odd:1.31,score:"0–1",won:0},
+  {d:"2026-11-11",league:"J. League Cup",match:"Yokohama F. Marinos – Kashima Antlers",market:"Over/Under",pick:"Over 1.5",odd:1.2,score:"2–3",won:1},
+  {d:"2026-11-11",league:"J. League Cup",match:"Urawa Reds – Cerezo Osaka",market:"Double Chance",pick:"1X",odd:1.25,score:"2–0",won:1},
+  {d:"2026-11-11",league:"Persha Liga",match:"FC Chernihiv – Inhulets",market:"Over/Under",pick:"Over 1.5",odd:1.25,score:"–",won:0,pp:1},
+  {d:"2026-11-11",league:"Slovak Cup",match:"Podbrezova – Z. Moravce-Vrable",market:"1X2",pick:"1",odd:1.21,score:"2–0",won:1},
   {d:"2026-11-10",league:"Copa del Rey",match:"Anaitasuna – Alaves",market:"Over/Under",pick:"Under 5.5",odd:1.36,score:"1–6",won:0},
   {d:"2026-11-10",league:"Copa del Rey",match:"Pamplona – Eibar",market:"1X2",pick:"2",odd:1.17,score:"0–3",won:1},
   {d:"2026-11-10",league:"Copa del Rey",match:"Amorebieta – UD Logrones",market:"Double Chance",pick:"X2",odd:1.28,score:"1–0",won:0},
@@ -902,6 +915,9 @@ const RESULTS = [
 ];
 // Mikeka ya nyuma (pamoja na code zake)
 const PAST_SLIPS = [
+  {d:"2026-11-11", title:"Mkeka wa Siku", book:"Meridianbet", code:"451711", legs:3, odds:4.04, won:1},
+  {d:"2026-11-11", title:"Odds Kubwa", book:"1xBet", code:"21M5L", legs:8, odds:42.24, won:1},
+  {d:"2026-11-11", title:"Mkeka wa Ushindi", book:"Betway", code:"BW81D7EFB6", legs:4, odds:5.92, won:0},
   {d:"2026-11-10", title:"Mkeka wa Siku", book:"Meridianbet", code:"401633", legs:3, odds:3.74, won:0},
   {d:"2026-11-10", title:"Odds Kubwa", book:"1xBet", code:"RT384", legs:7, odds:16.87, won:0},
   {d:"2026-11-10", title:"Mkeka wa Ushindi", book:"Betway", code:"BW81AA0394", legs:4, odds:6.26, won:0},
@@ -1007,7 +1023,8 @@ const fmtD = s => { const d=new Date(s+"T12:00:00"); return `${d.getDate()} ${mo
 const lastDate = RESULTS.reduce((m,r)=>r.d>m?r.d:m, "");
 function inRange(r){ if(!range) return true; const diff=(new Date(lastDate)-new Date(r.d))/864e5; return diff < range; }
 function renderResults(){
-  const rows = RESULTS.filter(inRange).sort((a,b)=>a.d.localeCompare(b.d));
+  const all = RESULTS.filter(inRange).sort((a,b)=>a.d.localeCompare(b.d));
+  const rows = all.filter(r=>!r.pp);
   const n = rows.length, w = rows.filter(r=>r.won).length;
   const profit = rows.reduce((a,r)=>a+(r.won?r.odd-1:-1),0);
   const avg = n ? rows.reduce((a,r)=>a+r.odd,0)/n : 0;
@@ -1029,10 +1046,10 @@ function renderResults(){
       <div class="track"><div class="fill" style="width:${p}%"></div></div><span class="val">${p}% · ${v.w}/${v.n}</span></div>`;}).join("");
   // table
   const f = $("#resFilter").value;
-  $("#resBody").innerHTML = rows.filter(r=>f===""||String(r.won)===f).reverse().map(r=>`
+  $("#resBody").innerHTML = all.filter(r=>f===""||(!r.pp&&String(r.won)===f)).reverse().map(r=>`
     <tr><td class="num">${fmtD(r.d)}</td><td><div>${r.match}</div><div class="league" style="font-size:.74rem;color:var(--muted)">${r.league}</div></td>
     <td>${r.pick} <span style="color:var(--muted);font-size:.8rem">${r.market}</span></td><td class="num">${r.odd.toFixed(2)}</td>
-    <td class="num">${r.score}</td><td><span class="badge ${r.won?'w':'l'}">${r.won?'✓ Umeshinda':'✕ Umechanika'}</span></td></tr>`).join("");
+    <td class="num">${r.score}</td><td>${r.pp?'<span class="badge p">⏸ Imeahirishwa</span>':`<span class="badge ${r.won?'w':'l'}">${r.won?'✓ Umeshinda':'✕ Umechanika'}</span>`}</td></tr>`).join("");
 }
 function drawProfit(rows){
   const el = $("#profitChart");
