@@ -709,18 +709,18 @@ const LOGOS = {"pmbet": "data:image/webp;base64,UklGRqwIAABXRUJQVlA4IKAIAABQOwCd
 /* ===== DATA: badilisha hapa ===== */
 // day: 0 = leo, 1 = kesho. conf: hi | md | lo
 const TIPS = [
-  {id:1, day:0, time:"17:00", league:"UEFA Nations League", home:"Cyprus", away:"Montenegro", market:"Over/Under", pick:"Over 1.5", odd:1.27, conf:"hi"},
-  {id:2, day:0, time:"17:00", league:"UEFA Nations League", home:"Latvia", away:"Armenia", market:"Double Chance", pick:"12", odd:1.33, conf:"md"},
-  {id:3, day:0, time:"20:00", league:"UEFA Nations League", home:"Belarus", away:"Albania", market:"Double Chance", pick:"12", odd:1.31, conf:"hi"},
-  {id:4, day:0, time:"20:00", league:"UEFA Nations League", home:"Finland", away:"San Marino", market:"Over/Under", pick:"Over 2.5", odd:1.22, conf:"hi"},
-  {id:5, day:0, time:"22:45", league:"UEFA Nations League", home:"Belgium", away:"Italy", market:"Double Chance", pick:"12", odd:1.28, conf:"hi"},
-  {id:6, day:0, time:"22:45", league:"UEFA Nations League", home:"Croatia", away:"Czechia", market:"1X2", pick:"1 (Croatia ashinde)", odd:1.55, conf:"md"},
-  {id:7, day:0, time:"22:45", league:"UEFA Nations League", home:"France", away:"Turkey", market:"BTTS", pick:"GG", odd:1.77, conf:"md"},
-  {id:8, day:0, time:"22:45", league:"UEFA Nations League", home:"Spain", away:"England", market:"Double Chance", pick:"12", odd:1.25, conf:"hi"},
-  {id:9, day:0, time:"16:00", league:"La Liga 2", home:"Tenerife", away:"Ceuta", market:"Over/Under", pick:"Over 1.5", odd:1.30, conf:"hi"},
-  {id:10,day:0, time:"18:15", league:"La Liga 2", home:"Granada", away:"Las Palmas", market:"Double Chance", pick:"1X", odd:1.26, conf:"hi"},
-  {id:11,day:0, time:"20:30", league:"La Liga 2", home:"Eibar", away:"Cadiz CF", market:"Over/Under", pick:"Over 1.5", odd:1.23, conf:"hi"},
-  {id:12,day:0, time:"20:30", league:"La Liga 2", home:"Eldense", away:"Sabadell", market:"Double Chance", pick:"12", odd:1.37, conf:"md"},
+  {id:1, day:0, time:"18:00", league:"UEFA Nations League", home:"Faroe Islands", away:"Moldova", market:"Double Chance", pick:"12", odd:1.29, conf:"hi"},
+  {id:2, day:0, time:"18:00", league:"UEFA Nations League", home:"Kazakhstan", away:"Slovakia", market:"Over/Under", pick:"Over 1.5", odd:1.31, conf:"hi"},
+  {id:3, day:0, time:"20:00", league:"UEFA Nations League", home:"Estonia", away:"Bulgaria", market:"Double Chance", pick:"1X", odd:1.25, conf:"hi"},
+  {id:4, day:0, time:"20:00", league:"UEFA Nations League", home:"Iceland", away:"Luxembourg", market:"1X2", pick:"1 (Iceland ashinde)", odd:1.25, conf:"hi"},
+  {id:5, day:0, time:"22:45", league:"UEFA Nations League", home:"Germany", away:"Netherlands", market:"BTTS", pick:"GG", odd:1.40, conf:"md"},
+  {id:6, day:0, time:"22:45", league:"UEFA Nations League", home:"Greece", away:"Serbia", market:"Double Chance", pick:"12", odd:1.2, conf:"hi"},
+  {id:7, day:0, time:"22:45", league:"UEFA Nations League", home:"North Macedonia", away:"Slovenia", market:"Double Chance", pick:"12", odd:1.23, conf:"hi"},
+  {id:8, day:0, time:"22:45", league:"UEFA Nations League", home:"Switzerland", away:"Scotland", market:"Over/Under", pick:"Over 1.5", odd:1.34, conf:"md"},
+  {id:9, day:0, time:"16:00", league:"Africa Cup of Nations", home:"Sudan", away:"Senegal", market:"1X2", pick:"2 (Senegal ashinde)", odd:1.24, conf:"hi"},
+  {id:10,day:0, time:"16:00", league:"Africa Cup of Nations", home:"Zimbabwe", away:"Equatorial Guinea", market:"Double Chance", pick:"1X", odd:1.25, conf:"hi"},
+  {id:11,day:0, time:"16:00", league:"Africa Cup of Nations", home:"Namibia", away:"Cameroon", market:"Double Chance", pick:"12", odd:1.22, conf:"hi"},
+  {id:12,day:0, time:"19:00", league:"Africa Cup of Nations", home:"Central African Republic", away:"Benin", market:"Double Chance", pick:"12", odd:1.21, conf:"hi"},
 ];
 // Kampuni: name, logo (kutoka LOGOS), promo (acha "" kama hakuna), offer = ofa kubwa, offerNote = masharti mafupi
 // Ofa zimekusanywa Oktoba 2026 kutoka vyanzo vya umma; zihakiki mara kwa mara.
@@ -758,7 +758,7 @@ const BOOKS = [
 ];
 // TAREHE YA MKEKA: badilisha hii kila unapoweka mikeka mipya (YYYY-MM-DD).
 // Tarehe kwenye hero na kwenye kadi za code haibadiliki yenyewe.
-const MKEKA_DATE = "2026-11-15";
+const MKEKA_DATE = "2026-11-16";
 // Code za mkeka. Kadi inaweza kuwa na date:"YYYY-MM-DD" yake (bila hivyo inatumia MKEKA_DATE). Ya kwanza ndiyo "Mkeka wa Siku" kwenye tiketi ya juu.
 // book lazima ilingane na jina kwenye BOOKS (ili kiungo na rangi vipatikane)
 // Kampuni Bora kwa Sasa: chagua kampuni (jina sawa na BOOKS) na sababu
@@ -770,16 +770,28 @@ const MONTH_PICK = {book:"Meridianbet", month:"Oktoba 2026",
 // n na odds (hiari): idadi ya mechi na jumla ya odds kama mechi hazipo kwenye TIPS
 // tips (hiari): mechi za mkeka zilizoandikwa moja kwa moja (time, home, away, pick, odd) badala ya ids
 const CODES = [
-  {title:"Mkeka wa Siku", book:"Meridianbet", code:"1078782", ids:[], tips:[
-    {time:"22:45", home:"Spain", away:"England", pick:"1 (Spain ashinde)", odd:1.95},
-    {time:"22:45", home:"Belgium", away:"Italy", pick:"GG", odd:1.59},
-    {time:"22:45", home:"Croatia", away:"Czechia", pick:"1 (Croatia ashinde)", odd:1.57},
+  {title:"Mkeka wa Siku", book:"Meridianbet", code:"915614", ids:[], tips:[
+    {time:"18:00", home:"Kazakhstan", away:"Slovakia", pick:"2 (Slovakia ashinde)", odd:1.85},
+    {time:"18:00", home:"Faroe Islands", away:"Moldova", pick:"1 (Faroe Islands ashinde)", odd:1.8},
+    {time:"22:45", home:"North Macedonia", away:"Slovenia", pick:"2 (Slovenia ashinde)", odd:1.53},
   ]},
-  {title:"Odds Kubwa", book:"1xBet", code:"FM9BT", ids:[], n:6, odds:144.69},
-  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW82B41798", ids:[], n:5, odds:5.02},
+  {title:"Odds Kubwa", book:"1xBet", code:"2CSTU", ids:[], n:4, odds:84.75},
+  {title:"Mkeka wa Ushindi", book:"Betway", code:"BW82E58AE7", ids:[], n:3, odds:3.41},
 ];
 // Matokeo ya nyuma: d = tarehe (YYYY-MM-DD), won: 1 = imeingia, 0 = umechanika
 const RESULTS = [
+  {d:"2026-11-15",league:"UEFA Nations League",match:"Cyprus – Montenegro",market:"Over/Under",pick:"Over 1.5",odd:1.27,score:"1–4",won:1},
+  {d:"2026-11-15",league:"UEFA Nations League",match:"Latvia – Armenia",market:"Double Chance",pick:"12",odd:1.33,score:"0–0",won:0},
+  {d:"2026-11-15",league:"UEFA Nations League",match:"Belarus – Albania",market:"Double Chance",pick:"12",odd:1.31,score:"0–2",won:1},
+  {d:"2026-11-15",league:"UEFA Nations League",match:"Finland – San Marino",market:"Over/Under",pick:"Over 2.5",odd:1.22,score:"7–2",won:1},
+  {d:"2026-11-15",league:"UEFA Nations League",match:"Belgium – Italy",market:"Double Chance",pick:"12",odd:1.28,score:"4–1",won:1},
+  {d:"2026-11-15",league:"UEFA Nations League",match:"Croatia – Czechia",market:"1X2",pick:"1",odd:1.55,score:"2–1",won:1},
+  {d:"2026-11-15",league:"UEFA Nations League",match:"France – Turkey",market:"BTTS",pick:"GG",odd:1.77,score:"2–1",won:1},
+  {d:"2026-11-15",league:"UEFA Nations League",match:"Spain – England",market:"Double Chance",pick:"12",odd:1.25,score:"2–3",won:1},
+  {d:"2026-11-15",league:"La Liga 2",match:"Tenerife – Ceuta",market:"Over/Under",pick:"Over 1.5",odd:1.3,score:"2–0",won:1},
+  {d:"2026-11-15",league:"La Liga 2",match:"Granada – Las Palmas",market:"Double Chance",pick:"1X",odd:1.26,score:"1–0",won:1},
+  {d:"2026-11-15",league:"La Liga 2",match:"Eibar – Cadiz CF",market:"Over/Under",pick:"Over 1.5",odd:1.23,score:"1–1",won:1},
+  {d:"2026-11-15",league:"La Liga 2",match:"Eldense – Sabadell",market:"Double Chance",pick:"12",odd:1.37,score:"2–0",won:1},
   {d:"2026-11-14",league:"UEFA Nations League",match:"Norway – Wales",market:"1X2",pick:"1",odd:1.22,score:"3–1",won:1},
   {d:"2026-11-14",league:"UEFA Nations League",match:"Portugal – Denmark",market:"1X2",pick:"1",odd:1.49,score:"1–4",won:0},
   {d:"2026-11-14",league:"UEFA Nations League",match:"Kosovo – Israel",market:"Over/Under",pick:"Over 1.5",odd:1.28,score:"0–0",won:0},
@@ -951,6 +963,9 @@ const RESULTS = [
 ];
 // Mikeka ya nyuma (pamoja na code zake)
 const PAST_SLIPS = [
+  {d:"2026-11-15", title:"Mkeka wa Siku", book:"Meridianbet", code:"1078782", legs:3, odds:4.87, won:0},
+  {d:"2026-11-15", title:"Odds Kubwa", book:"1xBet", code:"FM9BT", legs:6, odds:144.69, won:0},
+  {d:"2026-11-15", title:"Mkeka wa Ushindi", book:"Betway", code:"BW82B41798", legs:5, odds:5.02, won:1},
   {d:"2026-11-14", title:"Mkeka wa Siku", book:"Meridianbet", code:"1793386", legs:3, odds:5.23, won:0},
   {d:"2026-11-14", title:"Odds Kubwa", book:"1xBet", code:"MF5T6", legs:9, odds:33.29, won:0},
   {d:"2026-11-14", title:"Mkeka wa Ushindi", book:"Betway", code:"BW82875F1D", legs:4, odds:4.36, won:1},
